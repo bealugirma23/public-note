@@ -1,0 +1,35 @@
+"use client"
+
+import { Plus, PlusIcon } from "@phosphor-icons/react";
+import { motion } from "framer-motion"
+
+export const AddSticker = (props: { onClick: (color: string) => void }) => {
+  const colors = [
+    { id: "amber", hex: "#FAC66B" },
+    { id: "rose", hex: "#FC9583" },
+    { id: "sky", hex: "#93C2EA" },
+    { id: "mint", hex: "#95DBAB" },
+    { id: "lilac", hex: "#C6ADEC" },
+    { id: "blush", hex: "#F2C6DB" }
+  ];
+
+  return (
+    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-50">
+      <div className="flex justify-center items-center gap-4  backdrop-blur-md p-4 rounded-3xl shadow-xl border border-black/10">
+        {colors.map((c) => (
+          <motion.button
+            key={c.id}
+            onClick={() => props.onClick(c.id)}
+            whileHover={{ scale: 1.15, rotate: 90, y: -4 }}
+            whileTap={{ scale: 0.85, y: 2 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            className="w-14 h-14 rounded-xl flex justify-center items-center shadow-sm border border-black/20"
+            style={{ backgroundColor: c.hex }}
+          >
+            <PlusIcon color="bg-transparent" />
+          </motion.button>
+        ))}
+      </div>
+    </div>
+  )
+}

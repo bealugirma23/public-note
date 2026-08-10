@@ -1,0 +1,914 @@
+{
+  "emoji_1_group_33986": {
+    "id": "emoji_1_group_33986",
+    "name": "Group 33986",
+    "path": "/icons/emojis/Currencies & tokens/Group 33986.png",
+    "category": "Currencies & tokens"
+  },
+  "emoji_2_group_33989": {
+    "id": "emoji_2_group_33989",
+    "name": "Group 33989",
+    "path": "/icons/emojis/Currencies & tokens/Group 33989.png",
+    "category": "Currencies & tokens"
+  },
+  "emoji_3_group_743": {
+    "id": "emoji_3_group_743",
+    "name": "Group 743",
+    "path": "/icons/emojis/Currencies & tokens/Group 743.png",
+    "category": "Currencies & tokens"
+  },
+  "emoji_4_group_754": {
+    "id": "emoji_4_group_754",
+    "name": "Group 754",
+    "path": "/icons/emojis/Currencies & tokens/Group 754.png",
+    "category": "Currencies & tokens"
+  },
+  "emoji_5_group_755": {
+    "id": "emoji_5_group_755",
+    "name": "Group 755",
+    "path": "/icons/emojis/Currencies & tokens/Group 755.png",
+    "category": "Currencies & tokens"
+  },
+  "emoji_6_group_769": {
+    "id": "emoji_6_group_769",
+    "name": "Group 769",
+    "path": "/icons/emojis/Currencies & tokens/Group 769.png",
+    "category": "Currencies & tokens"
+  },
+  "emoji_7_group_771": {
+    "id": "emoji_7_group_771",
+    "name": "Group 771",
+    "path": "/icons/emojis/Currencies & tokens/Group 771.png",
+    "category": "Currencies & tokens"
+  },
+  "emoji_8_group_772": {
+    "id": "emoji_8_group_772",
+    "name": "Group 772",
+    "path": "/icons/emojis/Currencies & tokens/Group 772.png",
+    "category": "Currencies & tokens"
+  },
+  "emoji_9_group_773": {
+    "id": "emoji_9_group_773",
+    "name": "Group 773",
+    "path": "/icons/emojis/Currencies & tokens/Group 773.png",
+    "category": "Currencies & tokens"
+  },
+  "emoji_10_group_783": {
+    "id": "emoji_10_group_783",
+    "name": "Group 783",
+    "path": "/icons/emojis/Currencies & tokens/Group 783.png",
+    "category": "Currencies & tokens"
+  },
+  "emoji_11_mask_group": {
+    "id": "emoji_11_mask_group",
+    "name": "Mask group",
+    "path": "/icons/emojis/Currencies & tokens/Mask group.png",
+    "category": "Currencies & tokens"
+  },
+  "emoji_12_variant12": {
+    "id": "emoji_12_variant12",
+    "name": "Variant12",
+    "path": "/icons/emojis/Currencies & tokens/Variant12.png",
+    "category": "Currencies & tokens"
+  },
+  "emoji_13_variant13": {
+    "id": "emoji_13_variant13",
+    "name": "Variant13",
+    "path": "/icons/emojis/Currencies & tokens/Variant13.png",
+    "category": "Currencies & tokens"
+  },
+  "emoji_14_mask_group": {
+    "id": "emoji_14_mask_group",
+    "name": "Mask group",
+    "path": "/icons/emojis/banners/Mask group.png",
+    "category": "banners"
+  },
+  "emoji_15_battle_banner": {
+    "id": "emoji_15_battle_banner",
+    "name": "Battle Banner",
+    "path": "/icons/emojis/banners/flags/Battle Banner.png",
+    "category": "banners/flags"
+  },
+  "emoji_16_double_skull_banner": {
+    "id": "emoji_16_double_skull_banner",
+    "name": "Double Skull Banner",
+    "path": "/icons/emojis/banners/flags/Double Skull Banner.png",
+    "category": "banners/flags"
+  },
+  "emoji_17_health_banner": {
+    "id": "emoji_17_health_banner",
+    "name": "Health Banner",
+    "path": "/icons/emojis/banners/flags/Health Banner.png",
+    "category": "banners/flags"
+  },
+  "emoji_18_plain_banner": {
+    "id": "emoji_18_plain_banner",
+    "name": "Plain Banner",
+    "path": "/icons/emojis/banners/flags/Plain Banner.png",
+    "category": "banners/flags"
+  },
+  "emoji_19_skull_banner": {
+    "id": "emoji_19_skull_banner",
+    "name": "Skull Banner",
+    "path": "/icons/emojis/banners/flags/Skull Banner.png",
+    "category": "banners/flags"
+  },
+  "emoji_20_sword_banner": {
+    "id": "emoji_20_sword_banner",
+    "name": "Sword Banner",
+    "path": "/icons/emojis/banners/flags/Sword Banner.png",
+    "category": "banners/flags"
+  },
+  "emoji_21_target_banner": {
+    "id": "emoji_21_target_banner",
+    "name": "Target Banner",
+    "path": "/icons/emojis/banners/flags/Target Banner.png",
+    "category": "banners/flags"
+  },
+  "emoji_22_victory_banner": {
+    "id": "emoji_22_victory_banner",
+    "name": "Victory Banner",
+    "path": "/icons/emojis/banners/flags/Victory Banner.png",
+    "category": "banners/flags"
+  },
+  "emoji_23_group_753_1": {
+    "id": "emoji_23_group_753_1",
+    "name": "Group 753-1",
+    "path": "/icons/emojis/buildings/Group 753-1.png",
+    "category": "buildings"
+  },
+  "emoji_24_group_753": {
+    "id": "emoji_24_group_753",
+    "name": "Group 753",
+    "path": "/icons/emojis/buildings/Group 753.png",
+    "category": "buildings"
+  },
+  "emoji_25_group_86": {
+    "id": "emoji_25_group_86",
+    "name": "Group 86",
+    "path": "/icons/emojis/buildings/Group 86.png",
+    "category": "buildings"
+  },
+  "emoji_26_variant2": {
+    "id": "emoji_26_variant2",
+    "name": "Variant2",
+    "path": "/icons/emojis/buildings/Variant2.png",
+    "category": "buildings"
+  },
+  "emoji_27_shop": {
+    "id": "emoji_27_shop",
+    "name": "shop",
+    "path": "/icons/emojis/buildings/shop.png",
+    "category": "buildings"
+  },
+  "emoji_28_archer": {
+    "id": "emoji_28_archer",
+    "name": "Archer",
+    "path": "/icons/emojis/characters/Archer.png",
+    "category": "characters"
+  },
+  "emoji_29_cowboy": {
+    "id": "emoji_29_cowboy",
+    "name": "Cowboy",
+    "path": "/icons/emojis/characters/Cowboy.png",
+    "category": "characters"
+  },
+  "emoji_30_iron_knight": {
+    "id": "emoji_30_iron_knight",
+    "name": "Iron Knight",
+    "path": "/icons/emojis/characters/Iron Knight.png",
+    "category": "characters"
+  },
+  "emoji_31_royal_knight": {
+    "id": "emoji_31_royal_knight",
+    "name": "Royal Knight",
+    "path": "/icons/emojis/characters/Royal Knight.png",
+    "category": "characters"
+  },
+  "emoji_32_silver_knight": {
+    "id": "emoji_32_silver_knight",
+    "name": "Silver Knight",
+    "path": "/icons/emojis/characters/Silver Knight.png",
+    "category": "characters"
+  },
+  "emoji_33_variant10": {
+    "id": "emoji_33_variant10",
+    "name": "Variant10",
+    "path": "/icons/emojis/characters/Variant10.png",
+    "category": "characters"
+  },
+  "emoji_34_variant8": {
+    "id": "emoji_34_variant8",
+    "name": "Variant8",
+    "path": "/icons/emojis/characters/Variant8.png",
+    "category": "characters"
+  },
+  "emoji_35_variant9": {
+    "id": "emoji_35_variant9",
+    "name": "Variant9",
+    "path": "/icons/emojis/characters/Variant9.png",
+    "category": "characters"
+  },
+  "emoji_36_wizard": {
+    "id": "emoji_36_wizard",
+    "name": "Wizard",
+    "path": "/icons/emojis/characters/Wizard.png",
+    "category": "characters"
+  },
+  "emoji_37_robot1": {
+    "id": "emoji_37_robot1",
+    "name": "robot1",
+    "path": "/icons/emojis/characters/robot1.png",
+    "category": "characters"
+  },
+  "emoji_38_group_730": {
+    "id": "emoji_38_group_730",
+    "name": "Group 730",
+    "path": "/icons/emojis/mails & notes/Group 730.png",
+    "category": "mails & notes"
+  },
+  "emoji_39_group_782": {
+    "id": "emoji_39_group_782",
+    "name": "Group 782",
+    "path": "/icons/emojis/mails & notes/Group 782.png",
+    "category": "mails & notes"
+  },
+  "emoji_40_id": {
+    "id": "emoji_40_id",
+    "name": "ID",
+    "path": "/icons/emojis/mails & notes/ID.png",
+    "category": "mails & notes"
+  },
+  "emoji_41_mail_1": {
+    "id": "emoji_41_mail_1",
+    "name": "Mail-1",
+    "path": "/icons/emojis/mails & notes/Mail-1.png",
+    "category": "mails & notes"
+  },
+  "emoji_42_mail": {
+    "id": "emoji_42_mail",
+    "name": "Mail",
+    "path": "/icons/emojis/mails & notes/Mail.png",
+    "category": "mails & notes"
+  },
+  "emoji_43_mask_group": {
+    "id": "emoji_43_mask_group",
+    "name": "Mask group",
+    "path": "/icons/emojis/mails & notes/Mask group.png",
+    "category": "mails & notes"
+  },
+  "emoji_44_message": {
+    "id": "emoji_44_message",
+    "name": "Message",
+    "path": "/icons/emojis/mails & notes/Message.png",
+    "category": "mails & notes"
+  },
+  "emoji_45_magic_book": {
+    "id": "emoji_45_magic_book",
+    "name": "magic book",
+    "path": "/icons/emojis/mails & notes/magic book.png",
+    "category": "mails & notes"
+  },
+  "emoji_46_save_documents": {
+    "id": "emoji_46_save_documents",
+    "name": "save_documents",
+    "path": "/icons/emojis/mails & notes/save_documents.png",
+    "category": "mails & notes"
+  },
+  "emoji_47_group_70": {
+    "id": "emoji_47_group_70",
+    "name": "Group 70",
+    "path": "/icons/emojis/maps/Group 70.png",
+    "category": "maps"
+  },
+  "emoji_48_mask_group": {
+    "id": "emoji_48_mask_group",
+    "name": "Mask group",
+    "path": "/icons/emojis/maps/Mask group.png",
+    "category": "maps"
+  },
+  "emoji_49_tresure_map": {
+    "id": "emoji_49_tresure_map",
+    "name": "Tresure-Map",
+    "path": "/icons/emojis/maps/Tresure-Map.png",
+    "category": "maps"
+  },
+  "emoji_50_variant4": {
+    "id": "emoji_50_variant4",
+    "name": "Variant4",
+    "path": "/icons/emojis/maps/Variant4.png",
+    "category": "maps"
+  },
+  "emoji_51_variant5": {
+    "id": "emoji_51_variant5",
+    "name": "Variant5",
+    "path": "/icons/emojis/maps/Variant5.png",
+    "category": "maps"
+  },
+  "emoji_52_variant6": {
+    "id": "emoji_52_variant6",
+    "name": "Variant6",
+    "path": "/icons/emojis/maps/Variant6.png",
+    "category": "maps"
+  },
+  "emoji_53_default_1": {
+    "id": "emoji_53_default_1",
+    "name": "Default-1",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-1.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_54_default_10": {
+    "id": "emoji_54_default_10",
+    "name": "Default-10",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-10.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_55_default_11": {
+    "id": "emoji_55_default_11",
+    "name": "Default-11",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-11.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_56_default_12": {
+    "id": "emoji_56_default_12",
+    "name": "Default-12",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-12.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_57_default_13": {
+    "id": "emoji_57_default_13",
+    "name": "Default-13",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-13.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_58_default_14": {
+    "id": "emoji_58_default_14",
+    "name": "Default-14",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-14.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_59_default_15": {
+    "id": "emoji_59_default_15",
+    "name": "Default-15",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-15.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_60_default_16": {
+    "id": "emoji_60_default_16",
+    "name": "Default-16",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-16.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_61_default_17": {
+    "id": "emoji_61_default_17",
+    "name": "Default-17",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-17.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_62_default_18": {
+    "id": "emoji_62_default_18",
+    "name": "Default-18",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-18.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_63_default_19": {
+    "id": "emoji_63_default_19",
+    "name": "Default-19",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-19.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_64_default_2": {
+    "id": "emoji_64_default_2",
+    "name": "Default-2",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-2.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_65_default_20": {
+    "id": "emoji_65_default_20",
+    "name": "Default-20",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-20.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_66_default_3": {
+    "id": "emoji_66_default_3",
+    "name": "Default-3",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-3.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_67_default_4": {
+    "id": "emoji_67_default_4",
+    "name": "Default-4",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-4.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_68_default_5": {
+    "id": "emoji_68_default_5",
+    "name": "Default-5",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-5.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_69_default_6": {
+    "id": "emoji_69_default_6",
+    "name": "Default-6",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-6.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_70_default_7": {
+    "id": "emoji_70_default_7",
+    "name": "Default-7",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-7.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_71_default_8": {
+    "id": "emoji_71_default_8",
+    "name": "Default-8",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-8.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_72_default_9": {
+    "id": "emoji_72_default_9",
+    "name": "Default-9",
+    "path": "/icons/emojis/monsters & aliens & soo/Default-9.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_73_default": {
+    "id": "emoji_73_default",
+    "name": "Default",
+    "path": "/icons/emojis/monsters & aliens & soo/Default.png",
+    "category": "monsters & aliens & soo"
+  },
+  "emoji_74_chest": {
+    "id": "emoji_74_chest",
+    "name": "Chest",
+    "path": "/icons/emojis/others/Chest.png",
+    "category": "others"
+  },
+  "emoji_75_clock": {
+    "id": "emoji_75_clock",
+    "name": "Clock",
+    "path": "/icons/emojis/others/Clock.png",
+    "category": "others"
+  },
+  "emoji_76_cross_bones": {
+    "id": "emoji_76_cross_bones",
+    "name": "Cross_bones",
+    "path": "/icons/emojis/others/Cross_bones.png",
+    "category": "others"
+  },
+  "emoji_77_cumpos": {
+    "id": "emoji_77_cumpos",
+    "name": "Cumpos",
+    "path": "/icons/emojis/others/Cumpos.png",
+    "category": "others"
+  },
+  "emoji_78_gift_box": {
+    "id": "emoji_78_gift_box",
+    "name": "Gift_box",
+    "path": "/icons/emojis/others/Gift_box.png",
+    "category": "others"
+  },
+  "emoji_79_group_719": {
+    "id": "emoji_79_group_719",
+    "name": "Group 719",
+    "path": "/icons/emojis/others/Group 719.png",
+    "category": "others"
+  },
+  "emoji_80_group_84": {
+    "id": "emoji_80_group_84",
+    "name": "Group 84",
+    "path": "/icons/emojis/others/Group 84.png",
+    "category": "others"
+  },
+  "emoji_81_mask_group": {
+    "id": "emoji_81_mask_group",
+    "name": "Mask group",
+    "path": "/icons/emojis/others/Mask group.png",
+    "category": "others"
+  },
+  "emoji_82_picture": {
+    "id": "emoji_82_picture",
+    "name": "Picture",
+    "path": "/icons/emojis/others/Picture.png",
+    "category": "others"
+  },
+  "emoji_83_timer": {
+    "id": "emoji_83_timer",
+    "name": "Timer",
+    "path": "/icons/emojis/others/Timer.png",
+    "category": "others"
+  },
+  "emoji_84_variant5": {
+    "id": "emoji_84_variant5",
+    "name": "Variant5",
+    "path": "/icons/emojis/others/Variant5.png",
+    "category": "others"
+  },
+  "emoji_85_variant6": {
+    "id": "emoji_85_variant6",
+    "name": "Variant6",
+    "path": "/icons/emojis/others/Variant6.png",
+    "category": "others"
+  },
+  "emoji_86_variant7_1": {
+    "id": "emoji_86_variant7_1",
+    "name": "Variant7-1",
+    "path": "/icons/emojis/others/Variant7-1.png",
+    "category": "others"
+  },
+  "emoji_87_variant7": {
+    "id": "emoji_87_variant7",
+    "name": "Variant7",
+    "path": "/icons/emojis/others/Variant7.png",
+    "category": "others"
+  },
+  "emoji_88_variant8": {
+    "id": "emoji_88_variant8",
+    "name": "Variant8",
+    "path": "/icons/emojis/others/Variant8.png",
+    "category": "others"
+  },
+  "emoji_89_variant9": {
+    "id": "emoji_89_variant9",
+    "name": "Variant9",
+    "path": "/icons/emojis/others/Variant9.png",
+    "category": "others"
+  },
+  "emoji_90_winner": {
+    "id": "emoji_90_winner",
+    "name": "Winner",
+    "path": "/icons/emojis/others/Winner.png",
+    "category": "others"
+  },
+  "emoji_91_bag": {
+    "id": "emoji_91_bag",
+    "name": "bag",
+    "path": "/icons/emojis/others/bag.png",
+    "category": "others"
+  },
+  "emoji_92_bone": {
+    "id": "emoji_92_bone",
+    "name": "bone",
+    "path": "/icons/emojis/others/bone.png",
+    "category": "others"
+  },
+  "emoji_93_calender": {
+    "id": "emoji_93_calender",
+    "name": "calender",
+    "path": "/icons/emojis/others/calender.png",
+    "category": "others"
+  },
+  "emoji_94_table": {
+    "id": "emoji_94_table",
+    "name": "table",
+    "path": "/icons/emojis/others/table.png",
+    "category": "others"
+  },
+  "emoji_95_default_1": {
+    "id": "emoji_95_default_1",
+    "name": "Default-1",
+    "path": "/icons/emojis/ui icons/Default-1.png",
+    "category": "ui icons"
+  },
+  "emoji_96_default_10": {
+    "id": "emoji_96_default_10",
+    "name": "Default-10",
+    "path": "/icons/emojis/ui icons/Default-10.png",
+    "category": "ui icons"
+  },
+  "emoji_97_default_11": {
+    "id": "emoji_97_default_11",
+    "name": "Default-11",
+    "path": "/icons/emojis/ui icons/Default-11.png",
+    "category": "ui icons"
+  },
+  "emoji_98_default_12": {
+    "id": "emoji_98_default_12",
+    "name": "Default-12",
+    "path": "/icons/emojis/ui icons/Default-12.png",
+    "category": "ui icons"
+  },
+  "emoji_99_default_2": {
+    "id": "emoji_99_default_2",
+    "name": "Default-2",
+    "path": "/icons/emojis/ui icons/Default-2.png",
+    "category": "ui icons"
+  },
+  "emoji_100_default_3": {
+    "id": "emoji_100_default_3",
+    "name": "Default-3",
+    "path": "/icons/emojis/ui icons/Default-3.png",
+    "category": "ui icons"
+  },
+  "emoji_101_default_4": {
+    "id": "emoji_101_default_4",
+    "name": "Default-4",
+    "path": "/icons/emojis/ui icons/Default-4.png",
+    "category": "ui icons"
+  },
+  "emoji_102_default_5": {
+    "id": "emoji_102_default_5",
+    "name": "Default-5",
+    "path": "/icons/emojis/ui icons/Default-5.png",
+    "category": "ui icons"
+  },
+  "emoji_103_default_6": {
+    "id": "emoji_103_default_6",
+    "name": "Default-6",
+    "path": "/icons/emojis/ui icons/Default-6.png",
+    "category": "ui icons"
+  },
+  "emoji_104_default_7": {
+    "id": "emoji_104_default_7",
+    "name": "Default-7",
+    "path": "/icons/emojis/ui icons/Default-7.png",
+    "category": "ui icons"
+  },
+  "emoji_105_default_8": {
+    "id": "emoji_105_default_8",
+    "name": "Default-8",
+    "path": "/icons/emojis/ui icons/Default-8.png",
+    "category": "ui icons"
+  },
+  "emoji_106_default_9": {
+    "id": "emoji_106_default_9",
+    "name": "Default-9",
+    "path": "/icons/emojis/ui icons/Default-9.png",
+    "category": "ui icons"
+  },
+  "emoji_107_default": {
+    "id": "emoji_107_default",
+    "name": "Default",
+    "path": "/icons/emojis/ui icons/Default.png",
+    "category": "ui icons"
+  },
+  "emoji_108_variant14": {
+    "id": "emoji_108_variant14",
+    "name": "Variant14",
+    "path": "/icons/emojis/ui icons/Variant14.png",
+    "category": "ui icons"
+  },
+  "emoji_109_variant15": {
+    "id": "emoji_109_variant15",
+    "name": "Variant15",
+    "path": "/icons/emojis/ui icons/Variant15.png",
+    "category": "ui icons"
+  },
+  "emoji_110_variant16": {
+    "id": "emoji_110_variant16",
+    "name": "Variant16",
+    "path": "/icons/emojis/ui icons/Variant16.png",
+    "category": "ui icons"
+  },
+  "emoji_111_variant17": {
+    "id": "emoji_111_variant17",
+    "name": "Variant17",
+    "path": "/icons/emojis/ui icons/Variant17.png",
+    "category": "ui icons"
+  },
+  "emoji_112_variant18": {
+    "id": "emoji_112_variant18",
+    "name": "Variant18",
+    "path": "/icons/emojis/ui icons/Variant18.png",
+    "category": "ui icons"
+  },
+  "emoji_113_variant19": {
+    "id": "emoji_113_variant19",
+    "name": "Variant19",
+    "path": "/icons/emojis/ui icons/Variant19.png",
+    "category": "ui icons"
+  },
+  "emoji_114_variant20": {
+    "id": "emoji_114_variant20",
+    "name": "Variant20",
+    "path": "/icons/emojis/ui icons/Variant20.png",
+    "category": "ui icons"
+  },
+  "emoji_115_variant21": {
+    "id": "emoji_115_variant21",
+    "name": "Variant21",
+    "path": "/icons/emojis/ui icons/Variant21.png",
+    "category": "ui icons"
+  },
+  "emoji_116_variant22": {
+    "id": "emoji_116_variant22",
+    "name": "Variant22",
+    "path": "/icons/emojis/ui icons/Variant22.png",
+    "category": "ui icons"
+  },
+  "emoji_117_default_1": {
+    "id": "emoji_117_default_1",
+    "name": "Default-1",
+    "path": "/icons/emojis/utilies icons/Default-1.png",
+    "category": "utilies icons"
+  },
+  "emoji_118_default_10": {
+    "id": "emoji_118_default_10",
+    "name": "Default-10",
+    "path": "/icons/emojis/utilies icons/Default-10.png",
+    "category": "utilies icons"
+  },
+  "emoji_119_default_11": {
+    "id": "emoji_119_default_11",
+    "name": "Default-11",
+    "path": "/icons/emojis/utilies icons/Default-11.png",
+    "category": "utilies icons"
+  },
+  "emoji_120_default_12": {
+    "id": "emoji_120_default_12",
+    "name": "Default-12",
+    "path": "/icons/emojis/utilies icons/Default-12.png",
+    "category": "utilies icons"
+  },
+  "emoji_121_default_13": {
+    "id": "emoji_121_default_13",
+    "name": "Default-13",
+    "path": "/icons/emojis/utilies icons/Default-13.png",
+    "category": "utilies icons"
+  },
+  "emoji_122_default_14": {
+    "id": "emoji_122_default_14",
+    "name": "Default-14",
+    "path": "/icons/emojis/utilies icons/Default-14.png",
+    "category": "utilies icons"
+  },
+  "emoji_123_default_15": {
+    "id": "emoji_123_default_15",
+    "name": "Default-15",
+    "path": "/icons/emojis/utilies icons/Default-15.png",
+    "category": "utilies icons"
+  },
+  "emoji_124_default_16": {
+    "id": "emoji_124_default_16",
+    "name": "Default-16",
+    "path": "/icons/emojis/utilies icons/Default-16.png",
+    "category": "utilies icons"
+  },
+  "emoji_125_default_17": {
+    "id": "emoji_125_default_17",
+    "name": "Default-17",
+    "path": "/icons/emojis/utilies icons/Default-17.png",
+    "category": "utilies icons"
+  },
+  "emoji_126_default_18": {
+    "id": "emoji_126_default_18",
+    "name": "Default-18",
+    "path": "/icons/emojis/utilies icons/Default-18.png",
+    "category": "utilies icons"
+  },
+  "emoji_127_default_2": {
+    "id": "emoji_127_default_2",
+    "name": "Default-2",
+    "path": "/icons/emojis/utilies icons/Default-2.png",
+    "category": "utilies icons"
+  },
+  "emoji_128_default_3": {
+    "id": "emoji_128_default_3",
+    "name": "Default-3",
+    "path": "/icons/emojis/utilies icons/Default-3.png",
+    "category": "utilies icons"
+  },
+  "emoji_129_default_4": {
+    "id": "emoji_129_default_4",
+    "name": "Default-4",
+    "path": "/icons/emojis/utilies icons/Default-4.png",
+    "category": "utilies icons"
+  },
+  "emoji_130_default_5": {
+    "id": "emoji_130_default_5",
+    "name": "Default-5",
+    "path": "/icons/emojis/utilies icons/Default-5.png",
+    "category": "utilies icons"
+  },
+  "emoji_131_default_6": {
+    "id": "emoji_131_default_6",
+    "name": "Default-6",
+    "path": "/icons/emojis/utilies icons/Default-6.png",
+    "category": "utilies icons"
+  },
+  "emoji_132_default_7": {
+    "id": "emoji_132_default_7",
+    "name": "Default-7",
+    "path": "/icons/emojis/utilies icons/Default-7.png",
+    "category": "utilies icons"
+  },
+  "emoji_133_default_8": {
+    "id": "emoji_133_default_8",
+    "name": "Default-8",
+    "path": "/icons/emojis/utilies icons/Default-8.png",
+    "category": "utilies icons"
+  },
+  "emoji_134_default_9": {
+    "id": "emoji_134_default_9",
+    "name": "Default-9",
+    "path": "/icons/emojis/utilies icons/Default-9.png",
+    "category": "utilies icons"
+  },
+  "emoji_135_default": {
+    "id": "emoji_135_default",
+    "name": "Default",
+    "path": "/icons/emojis/utilies icons/Default.png",
+    "category": "utilies icons"
+  },
+  "emoji_136_group_729": {
+    "id": "emoji_136_group_729",
+    "name": "Group 729",
+    "path": "/icons/emojis/weapons & items/Group 729.png",
+    "category": "weapons & items"
+  },
+  "emoji_137_group_756": {
+    "id": "emoji_137_group_756",
+    "name": "Group 756",
+    "path": "/icons/emojis/weapons & items/Group 756.png",
+    "category": "weapons & items"
+  },
+  "emoji_138_group_760": {
+    "id": "emoji_138_group_760",
+    "name": "Group 760",
+    "path": "/icons/emojis/weapons & items/Group 760.png",
+    "category": "weapons & items"
+  },
+  "emoji_139_group_761": {
+    "id": "emoji_139_group_761",
+    "name": "Group 761",
+    "path": "/icons/emojis/weapons & items/Group 761.png",
+    "category": "weapons & items"
+  },
+  "emoji_140_group_764": {
+    "id": "emoji_140_group_764",
+    "name": "Group 764",
+    "path": "/icons/emojis/weapons & items/Group 764.png",
+    "category": "weapons & items"
+  },
+  "emoji_141_group_766": {
+    "id": "emoji_141_group_766",
+    "name": "Group 766",
+    "path": "/icons/emojis/weapons & items/Group 766.png",
+    "category": "weapons & items"
+  },
+  "emoji_142_group_768": {
+    "id": "emoji_142_group_768",
+    "name": "Group 768",
+    "path": "/icons/emojis/weapons & items/Group 768.png",
+    "category": "weapons & items"
+  },
+  "emoji_143_mask_group": {
+    "id": "emoji_143_mask_group",
+    "name": "Mask group",
+    "path": "/icons/emojis/weapons & items/Mask group.png",
+    "category": "weapons & items"
+  },
+  "emoji_144_shiled": {
+    "id": "emoji_144_shiled",
+    "name": "Shiled",
+    "path": "/icons/emojis/weapons & items/Shiled.png",
+    "category": "weapons & items"
+  },
+  "emoji_145_sword": {
+    "id": "emoji_145_sword",
+    "name": "Sword",
+    "path": "/icons/emojis/weapons & items/Sword.png",
+    "category": "weapons & items"
+  },
+  "emoji_146_variant16": {
+    "id": "emoji_146_variant16",
+    "name": "Variant16",
+    "path": "/icons/emojis/weapons & items/Variant16.png",
+    "category": "weapons & items"
+  },
+  "emoji_147_variant17": {
+    "id": "emoji_147_variant17",
+    "name": "Variant17",
+    "path": "/icons/emojis/weapons & items/Variant17.png",
+    "category": "weapons & items"
+  },
+  "emoji_148_posion_green": {
+    "id": "emoji_148_posion_green",
+    "name": "posion_green",
+    "path": "/icons/emojis/weapons & items/posion_green.png",
+    "category": "weapons & items"
+  },
+  "emoji_149_posion_purple": {
+    "id": "emoji_149_posion_purple",
+    "name": "posion_purple",
+    "path": "/icons/emojis/weapons & items/posion_purple.png",
+    "category": "weapons & items"
+  },
+  "emoji_150_posion_red": {
+    "id": "emoji_150_posion_red",
+    "name": "posion_red",
+    "path": "/icons/emojis/weapons & items/posion_red.png",
+    "category": "weapons & items"
+  },
+  "emoji_151_target_1": {
+    "id": "emoji_151_target_1",
+    "name": "target-1",
+    "path": "/icons/emojis/weapons & items/target-1.png",
+    "category": "weapons & items"
+  },
+  "emoji_152_target": {
+    "id": "emoji_152_target",
+    "name": "target",
+    "path": "/icons/emojis/weapons & items/target.png",
+    "category": "weapons & items"
+  }
+}
