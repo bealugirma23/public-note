@@ -5,6 +5,7 @@ import { crypto } from "https://deno.land/std@0.177.0/crypto/mod.ts";
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE',
 };
 
 serve(async (req) => {
@@ -57,14 +58,14 @@ serve(async (req) => {
     // We do a raw update to recalculate expiration. 
     // In postgres SQL this would be `LEAST(created_at + 7 days, now() + 24 hours)`
     // We can do this in two steps or just update it via JS logic
-    
+
     // First, fetch the note's created_at
     const { data: note, error: fetchError } = await supabaseClient
       .from("wall_notes")
       .select("created_at")
       .eq("id", note_id)
       .single();
-      
+
     if (fetchError || !note) throw new Error("Note not found");
 
     const createdAt = new Date(note.created_at);

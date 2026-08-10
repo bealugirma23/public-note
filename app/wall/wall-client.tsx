@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useCallback, useRef, useMemo } from "react";
 import {
   ReactFlow,
   useNodesState,
@@ -94,6 +94,29 @@ function StickyNoteNode({ data }: NodeProps<Node>) {
   const [saving, setSaving] = useState(false);
   const editRef = useRef<HTMLTextAreaElement>(null);
 
+  const defaultEmojiIds = useMemo(() => {
+    let hash = 0;
+    const id = data.id as string;
+    for (let i = 0; i < id.length; i++) {
+      hash = id.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const allEmojiIds = Object.keys(emojisData);
+    const result = [];
+    for (let i = 0; i < 3; i++) {
+      const index = Math.abs(hash + i * 12345) % allEmojiIds.length;
+      result.push(allEmojiIds[index]);
+    }
+    return result;
+  }, [data.id]);
+
+  const emojiCounts = (data.emojis as Record<string, number>) || {};
+  const emojisToRender = new Set([...defaultEmojiIds]);
+  Object.entries(emojiCounts).forEach(([emojiId, count]) => {
+    if (count > 0) {
+      emojisToRender.add(emojiId);
+    }
+  });
+
   useEffect(() => {
     if (isEditing && editRef.current) {
       editRef.current.style.height = "auto";
@@ -177,62 +200,18 @@ function StickyNoteNode({ data }: NodeProps<Node>) {
           <span>•</span>
           <span className="truncate">{String(data.name || "Anonymous")}</span>
         </div>
+        {/* bg-black/5 */}
 
-        <div className="flex justify-between items-center bg-black/5 rounded-full px-2 py-1">
-          <button
-            onClick={() => handleReaction("like")}
-            className="hover:scale-110 transition-transform flex gap-1 items-center text-xs"
-          >
-            <span
-              className="w-[16px] h-[16px] inline-block"
-              style={{
-                backgroundColor: shade,
-                maskImage: `url('/icons/thumbsup_filled.svg')`,
-                maskSize: 'contain',
-                maskRepeat: 'no-repeat',
-                maskPosition: 'center',
-                WebkitMaskImage: `url('/icons/thumbsup_filled.svg')`,
-                WebkitMaskSize: 'contain',
-                WebkitMaskRepeat: 'no-repeat',
-                WebkitMaskPosition: 'center',
-              }}
-            />
-            <span className="font-bold" style={{ color: shade }}>
-              {Number(data.likes) || 0}
-            </span>
-          </button>
-
-          <button
-            onClick={() => handleReaction("dislike")}
-            className="hover:scale-110 transition-transform flex gap-1 items-center text-xs"
-          >
-            <span
-              className="w-[16px] h-[16px] inline-block"
-              style={{
-                backgroundColor: shade,
-                maskImage: `url('/icons/thumbsdown_filled.svg')`,
-                maskSize: 'contain',
-                maskRepeat: 'no-repeat',
-                maskPosition: 'center',
-                WebkitMaskImage: `url('/icons/thumbsdown_filled.svg')`,
-                WebkitMaskSize: 'contain',
-                WebkitMaskRepeat: 'no-repeat',
-                WebkitMaskPosition: 'center',
-              }}
-            />
-            <span className="font-bold" style={{ color: shade }}>
-              {Number(data.dislikes) || 0}
-            </span>
-          </button>
-
-          {!!data.emojis && Object.entries(data.emojis as Record<string, number>).map(([emojiId, count]) => {
+        <div className="flex flex-wrap gap-1.5 items-center mt-1">
+          {Array.from(emojisToRender).map((emojiId) => {
             const emojiInfo = (emojisData as Record<string, { path: string, name: string }>)[emojiId];
-            if (!emojiInfo || count <= 0) return null;
+            if (!emojiInfo) return null;
+            const count = emojiCounts[emojiId] || 0;
             return (
               <button
                 key={emojiId}
                 onClick={() => handleReaction(emojiId)}
-                className="hover:scale-110 transition-transform flex gap-1 items-center text-xs bg-black/5 px-1.5 rounded"
+                className={`hover:scale-110 transition-transform flex gap-1 items-center text-xs px-1.5 rounded py-0.5 ${count > 0 ? 'bg-black/10' : 'bg-black/5 hover:bg-black/10'}`}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={emojiInfo.path} alt={emojiInfo.name} className="w-[16px] h-[16px] object-contain" />
@@ -243,7 +222,9 @@ function StickyNoteNode({ data }: NodeProps<Node>) {
             );
           })}
 
-          <EmojiPicker color={shade} onSelect={(emojiId) => handleReaction(emojiId)} />
+          <div className="ml-auto flex">
+            <EmojiPicker color={shade} onSelect={(emojiId) => handleReaction(emojiId)} />
+          </div>
         </div>
       </div>
     </motion.div>
@@ -252,6 +233,7 @@ function StickyNoteNode({ data }: NodeProps<Node>) {
 
 function DraftStickyNode({ id, data }: NodeProps<Node<{ onPost: any, onCancel: any, color?: string }>>) {
   const [content, setContent] = useState("");
+  const [name, setName] = useState("");
   const [color, setColor] = useState(data.color || "amber");
   const [saving, setSaving] = useState(false);
   const bg = STICKY_COLORS[color];
@@ -267,7 +249,7 @@ function DraftStickyNode({ id, data }: NodeProps<Node<{ onPost: any, onCancel: a
   const handlePost = async () => {
     if (!content.trim()) return;
     setSaving(true);
-    await data.onPost(id, content, color);
+    await data.onPost(id, content, color, name);
     setSaving(false);
   };
 
@@ -290,6 +272,15 @@ function DraftStickyNode({ id, data }: NodeProps<Node<{ onPost: any, onCancel: a
         autoFocus
       />
       <div className="mt-4 flex flex-col gap-3 font-sans">
+        <input
+          type="text"
+          placeholder="Enter your name (optional)"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          disabled={saving}
+          className="w-full placeholder:font-excalifont placeholder-black/40 text-xs font-semibold px-2 py-1.5 rounded outline-none border-b border-black/10 focus:border-black/30 transition-colors"
+          maxLength={30}
+        />
         <div className="flex gap-1.5 justify-center">
           {colorKeys.map(c => (
             <button
@@ -416,7 +407,7 @@ function WallCanvas() {
         onCancel: (id: string) => {
           setNodes((nds) => nds.filter((n) => n.id !== id));
         },
-        onPost: async (id: string, content: string, color: string) => {
+        onPost: async (id: string, content: string, color: string, name: string) => {
           return new Promise<void>((resolve) => {
             if (!navigator.geolocation) {
               alert("Geolocation is not supported by your browser");
@@ -432,7 +423,7 @@ function WallCanvas() {
                 const y = lat * -REGION_SCALE;
 
                 try {
-                  const savedNote = await postNote(content, color, x, y, lat, lng, "Anon");
+                  const savedNote = await postNote(content, color, x, y, lat, lng, name || "Anonymous");
                   const newPosition = getNotePosition(savedNote);
 
                   setNodes((nds) => [
@@ -501,6 +492,7 @@ import { RealtimeCursors } from "@/components/realtime-cursors";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { AddSticker } from "../components/AddSticker";
+import { PublicWallGuidelinesModal } from "../components/OnboardingRule";
 
 export default function WallClient() {
   const [username] = useState(() => `Guest ${Math.floor(Math.random() * 1000)}`);
@@ -512,6 +504,7 @@ export default function WallClient() {
         <WallCanvas />
       </ReactFlowProvider>
       <Footer />
+      <PublicWallGuidelinesModal />
     </div>
   );
 }

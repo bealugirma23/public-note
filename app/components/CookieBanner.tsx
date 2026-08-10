@@ -7,36 +7,56 @@ export function CookieBanner() {
 
   useEffect(() => {
     const consent = localStorage.getItem("cookie_consent");
+
     if (!consent) {
       setShow(true);
     }
   }, []);
 
   const accept = () => {
-    localStorage.setItem("cookie_consent", "true");
+    localStorage.setItem("cookie_consent", "accepted");
+    setShow(false);
+  };
+
+  const decline = () => {
+    localStorage.setItem("cookie_consent", "declined");
     setShow(false);
   };
 
   if (!show) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 p-4 shadow-lg z-50 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p className="text-sm text-zinc-600 dark:text-zinc-300">
-        We use cookies and Google Analytics to cluster notes based on regions and track usage. Do you accept?
-      </p>
-      <div className="flex gap-3">
-        <button
-          onClick={() => setShow(false)}
-          className="px-4 py-2 text-sm font-medium text-zinc-500 hover:text-black dark:hover:text-white"
-        >
-          Decline
-        </button>
-        <button
-          onClick={accept}
-          className="px-4 py-2 text-sm font-medium bg-black text-white dark:bg-white dark:text-black rounded"
-        >
-          Accept
-        </button>
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+      <div className="w-full max-w-md rounded-xl border border-zinc-200 bg-white p-6 shadow-2xl dark:border-zinc-800 dark:bg-zinc-900">
+        <div className="space-y-4">
+          <div>
+            <h2 className="text-lg font-semibold text-zinc-900 dark:text-white">
+              🍪 Cookie preferences
+            </h2>
+
+            <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+              We use cookies and Google Analytics to cluster notes based on
+              regions and understand how the platform is being used. Do you
+              accept?
+            </p>
+          </div>
+
+          <div className="flex justify-end gap-3">
+            <button
+              onClick={decline}
+              className="rounded-lg px-4 py-2 text-sm font-medium text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-black dark:hover:bg-zinc-800 dark:hover:text-white"
+            >
+              Decline
+            </button>
+
+            <button
+              onClick={accept}
+              className="rounded-lg bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+            >
+              Accept
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
