@@ -35,39 +35,73 @@ serve(async (req) => {
     const hashArray = Array.from(new Uint8Array(hashBuffer));
     const visitorTokenHash = hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
 
-    // 2. Insert interaction (will fail if unique constraint violated)
-    const { error: insertError } = await supabaseClient
-      .from("wall_note_interactions")
-      .insert({
-        note_id,
-        visitor_token_hash: visitorTokenHash,
-        type,
-      });
-
-    if (insertError) {
-      if (insertError.code === "23505") { // Unique violation
-        return new Response(JSON.stringify({ error: "Already interacted" }), {
-          status: 409,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        });
-      }
-      throw insertError;
-    }
-
-    // 3. Update note's last_interaction_at and expires_at
-    // We do a raw update to recalculate expiration. 
-    // In postgres SQL this would be `LEAST(created_at + 7 days, now() + 24 hours)`
-    // We can do this in two steps or just update it via JS logic
-
-    // First, fetch the note's created_at
+    // 2. Fetch the note first to check owner and calculate new expiration
     const { data: note, error: fetchError } = await supabaseClient
       .from("wall_notes")
-      .select("created_at")
+      .select("created_at, owner_token_hash")
       .eq("id", note_id)
       .single();
 
     if (fetchError || !note) throw new Error("Note not found");
 
+    // 3. Block self-voting
+    if (note.owner_token_hash === visitorTokenHash) {
+      return new Response(JSON.stringify({ error: "You cannot vote on your own note" }), {
+        status: 403,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    // 4. Handle Interaction (One vote per user per note)
+    const { data: existing } = await supabaseClient
+      .from("wall_note_interactions")
+      .select("id, type")
+      .match({ note_id, visitor_token_hash: visitorTokenHash })
+      .maybeSingle();
+
+    let toggledOff = false;
+    let changedFrom = null;
+
+    if (existing) {
+      if (existing.type === type) {
+        // Toggle off
+        const { error: deleteError } = await supabaseClient
+          .from("wall_note_interactions")
+          .delete()
+          .eq("id", existing.id);
+        if (deleteError) throw deleteError;
+        toggledOff = true;
+      } else {
+        // Change vote
+        const { error: updateError } = await supabaseClient
+          .from("wall_note_interactions")
+          .update({ type })
+          .eq("id", existing.id);
+        if (updateError) throw updateError;
+        changedFrom = existing.type;
+      }
+    } else {
+      // Insert new vote
+      const { error: insertError } = await supabaseClient
+        .from("wall_note_interactions")
+        .insert({
+          note_id,
+          visitor_token_hash: visitorTokenHash,
+          type,
+        });
+      if (insertError) {
+        // Fallback for concurrency
+        if (insertError.code === "23505") {
+          return new Response(JSON.stringify({ error: "Already interacted concurrently" }), {
+            status: 409,
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+          });
+        }
+        throw insertError;
+      }
+    }
+
+    // 5. Update note's last_interaction_at and expires_at
     const createdAt = new Date(note.created_at);
     const maxLife = new Date(createdAt.getTime() + 7 * 24 * 60 * 60 * 1000);
     const inactiveLife = new Date(Date.now() + 24 * 60 * 60 * 1000);
@@ -83,7 +117,7 @@ serve(async (req) => {
 
     if (updateError) throw updateError;
 
-    return new Response(JSON.stringify({ success: true }), {
+    return new Response(JSON.stringify({ success: true, toggledOff, changedFrom }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });

@@ -67,14 +67,28 @@ export function subscribeToNotes(
 }
 
 export function subscribeToInteractions(
-  onInteraction: (interaction: { note_id: string; type: string }) => void
+  onInteraction: (interaction: { note_id: string; type: string; old_type?: string; action: "INSERT" | "DELETE" | "UPDATE" }) => void
 ) {
   return supabase
     .channel("wall-interactions")
     .on(
       "postgres_changes",
       { event: "INSERT", schema: "public", table: "wall_note_interactions" },
-      (payload) => onInteraction(payload.new as { note_id: string; type: string })
+      (payload) => onInteraction({ ...payload.new as { note_id: string; type: string }, action: "INSERT" })
+    )
+    .on(
+      "postgres_changes",
+      { event: "DELETE", schema: "public", table: "wall_note_interactions" },
+      (payload) => onInteraction({ ...payload.old as { note_id: string; type: string }, action: "DELETE" })
+    )
+    .on(
+      "postgres_changes",
+      { event: "UPDATE", schema: "public", table: "wall_note_interactions" },
+      (payload) => onInteraction({ 
+        ...payload.new as { note_id: string; type: string }, 
+        old_type: (payload.old as { type?: string }).type,
+        action: "UPDATE" 
+      })
     )
     .subscribe();
 }

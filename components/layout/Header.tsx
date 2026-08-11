@@ -13,7 +13,9 @@ export const Header = () => {
         />
         <div>
           <h2 className="font-excalifont">Public Note</h2>
-          <p className="opacity-30  font-excalifont">Write your thoughts, ideas, or lessons that you would like people to read</p>
+          <p className="opacity-30  font-excalifont">
+            A place for thoughts to wander, waiting for someone to find them.
+          </p>
         </div>
 
       </div>

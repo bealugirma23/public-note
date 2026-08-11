@@ -53,6 +53,7 @@ export function useWallData() {
         nds.map((n) => {
           if (n.id === interaction.note_id) {
             const type = interaction.type;
+            const oldType = interaction.old_type;
 
             if (type === "like" || type === "dislike") {
               const key = `${type}s`;
@@ -60,19 +61,28 @@ export function useWallData() {
                 ...n,
                 data: {
                   ...n.data,
-                  [key]: ((n.data[key] as number) || 0) + 1,
+                  [key]: Math.max(0, ((n.data[key] as number) || 0) + (interaction.action === "INSERT" ? 1 : -1)),
                 },
               };
             } else {
-              const currentEmojis = (n.data.emojis as Record<string, number>) || {};
+              const currentEmojis = { ...(n.data.emojis as Record<string, number>) || {} };
+              
+              if (interaction.action === "INSERT") {
+                currentEmojis[type] = (currentEmojis[type] || 0) + 1;
+              } else if (interaction.action === "DELETE") {
+                currentEmojis[type] = Math.max(0, (currentEmojis[type] || 0) - 1);
+              } else if (interaction.action === "UPDATE") {
+                if (oldType && oldType !== type) {
+                  currentEmojis[oldType] = Math.max(0, (currentEmojis[oldType] || 0) - 1);
+                }
+                currentEmojis[type] = (currentEmojis[type] || 0) + 1;
+              }
+
               return {
                 ...n,
                 data: {
                   ...n.data,
-                  emojis: {
-                    ...currentEmojis,
-                    [type]: (currentEmojis[type] || 0) + 1,
-                  },
+                  emojis: currentEmojis,
                 },
               };
             }

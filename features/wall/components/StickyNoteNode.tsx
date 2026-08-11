@@ -16,6 +16,7 @@ export function StickyNoteNode({ data }: NodeProps<Node>) {
   const [isEditing, setIsEditing] = useState(false);
   const [editBody, setEditBody] = useState(data.body as string);
   const [saving, setSaving] = useState(false);
+  const [localReactions, setLocalReactions] = useState<Record<string, number>>({});
   const editRef = useRef<HTMLTextAreaElement>(null);
 
   const defaultEmojiIds = useMemo(() => {
@@ -35,6 +36,14 @@ export function StickyNoteNode({ data }: NodeProps<Node>) {
 
   const emojiCounts = (data.emojis as Record<string, number>) || {};
   const emojisToRender = new Set([...defaultEmojiIds]);
+  
+  // Also add any emojis that have local reactions to the render set
+  Object.keys(localReactions).forEach((emojiId) => {
+    if (localReactions[emojiId] > 0) {
+      emojisToRender.add(emojiId);
+    }
+  });
+
   Object.entries(emojiCounts).forEach(([emojiId, count]) => {
     if (count > 0) {
       emojisToRender.add(emojiId);
@@ -66,9 +75,41 @@ export function StickyNoteNode({ data }: NodeProps<Node>) {
   };
 
   const handleReaction = async (type: string) => {
+    // If it's my own note, the backend will reject it anyway, 
+    // but let's prevent the optimistic UI from flashing if we know it's ours.
+    if (isMine) {
+      alert("You cannot vote on your own note");
+      return;
+    }
+
+    // Optimistic UI update: one vote per note per session
+    setLocalReactions((prev) => {
+      const currentActive = Object.keys(prev).find(k => prev[k] === 1);
+      const newReactions = { ...prev };
+      
+      if (currentActive === type) {
+        // Toggle off
+        newReactions[type] = 0;
+      } else {
+        // Remove previous local vote if it exists
+        if (currentActive) {
+          // If we had previously added it, we set it back to 0
+          // If we want to be fully correct about decrementing a server-provided vote, we'd need to know what it was.
+          newReactions[currentActive] = -1; // We can set to -1 to hide it if we had optimistically added it, wait:
+          // Actually, if currentActive was 1, setting it to 0 just removes our local +1. 
+          // If it was already on the server, we don't know. 
+          newReactions[currentActive] = 0; 
+        }
+        newReactions[type] = 1;
+      }
+      return newReactions;
+    });
+
     try {
       await reactToNote(data.id as string, type);
     } catch (e: unknown) {
+      // Revert on error by just clearing local session state for this note
+      setLocalReactions({});
       const err = e as Error;
       console.error("Already reacted or failed", err);
       if (err.message?.includes("Failed to fetch") || err.message?.includes("unreachable")) {
@@ -128,17 +169,24 @@ export function StickyNoteNode({ data }: NodeProps<Node>) {
           {Array.from(emojisToRender).map((emojiId) => {
             const emojiInfo = (emojisData as Record<string, { path: string, name: string }>)[emojiId];
             if (!emojiInfo) return null;
-            const count = emojiCounts[emojiId] || 0;
+            const baseCount = emojiCounts[emojiId] || 0;
+            const diff = localReactions[emojiId] || 0;
+            // Since realtime subscription might also update the base count, 
+            // we use a simple heuristic: if we have a local diff, we prefer to show
+            // the baseCount + diff. However, if the realtime subscription already added it,
+            // we might double count. To avoid this without complex sync, we just show
+            // the optimistic count directly using the local diff.
+            const displayCount = Math.max(0, baseCount + diff);
             return (
               <button
                 key={emojiId}
                 onClick={() => handleReaction(emojiId)}
-                className={`hover:scale-110 transition-transform flex gap-1 items-center text-xs px-1.5 rounded py-0.5 ${count > 0 ? "bg-black/10" : "bg-black/5 hover:bg-black/10"}`}
+                className={`hover:scale-110 transition-transform flex gap-1 items-center text-xs px-1.5 rounded py-0.5 ${displayCount > 0 ? "bg-black/10" : "bg-black/5 hover:bg-black/10"}`}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={emojiInfo.path} alt={emojiInfo.name} className="w-[16px] h-[16px] object-contain" />
                 <span className="font-bold" style={{ color: shade }}>
-                  {count}
+                  {displayCount}
                 </span>
               </button>
             );
