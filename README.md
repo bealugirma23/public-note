@@ -1,4 +1,6 @@
-# Public Notes 📝🌍
+![Logo](/logo.png)
+
+## Overview
 
 An interactive, real-time public wall where anyone can leave sticky notes, react with emojis, and collaborate on an infinite canvas. Built with modern web technologies, it features live cursors, customizable note styling, and clustered interactions.
 
@@ -26,6 +28,7 @@ An interactive, real-time public wall where anyone can leave sticky notes, react
 ## 📖 Documentation
 
 For deeper dives into the project setup, please refer to the `docs/` directory:
+
 - [Architecture](docs/ARCHITECTURE.md) - System design and data flow.
 - [Design](docs/DESIGN.md) - UI/UX principles and component structure.
 - [Project Overview](docs/project.md) - High-level goals and context.
@@ -42,18 +45,21 @@ For deeper dives into the project setup, please refer to the `docs/` directory:
 ### Installation
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/your-username/public-notes.git
    cd public-notes
    ```
 
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 3. **Environment Setup:**
    Create a `.env.local` file in the root directory and add your Supabase credentials:
+
    ```env
    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
@@ -63,9 +69,11 @@ For deeper dives into the project setup, please refer to the `docs/` directory:
    The database migrations are located in `supabase/migrations`. Apply them to your Supabase instance to create the necessary tables (`wall_notes`, `wall_interactions`, etc.) and views.
 
 5. **Start the development server:**
+
    ```bash
    npm run dev
    ```
+
    Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
 
 ## 🧪 Testing
@@ -73,6 +81,7 @@ For deeper dives into the project setup, please refer to the `docs/` directory:
 We use **Jest** for unit testing and **Playwright** for End-to-End (E2E) testing.
 
 **Run unit tests:**
+
 ```bash
 npm run test
 # or run in watch mode
@@ -81,6 +90,7 @@ npm run test:watch
 
 **Run E2E tests:**
 Make sure you've installed Playwright browsers first (`npx playwright install`).
+
 ```bash
 npm run test:e2e
 # or run with the UI
@@ -99,6 +109,7 @@ We welcome contributions! Whether you want to fix a bug, add a feature, or impro
 6. **Open a Pull Request:** Describe your changes in detail and link any relevant issues.
 
 ### Known Issues & Upcoming Features
+
 Check out the `todo.md` file for a list of active tasks, known bugs (like overlapping clusters), and planned features (like auto-expiring notes).
 
 ## 📄 License
