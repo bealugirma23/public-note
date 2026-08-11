@@ -1,4 +1,4 @@
-![Logo](/logo.png)
+![Logo](https://github.com/bealugirma23/public-note/blob/main/public/logo.png)
 
 ## Overview
 
