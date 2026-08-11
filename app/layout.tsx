@@ -34,12 +34,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
-          {/* TODO: remove cookie   */}
-          <CookieBanner />
+          {/* <CookieBanner /> */}
         </ThemeProvider>
 
         {/* TODO: add real google analaysis credentials  */}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-LQ2ECEYKB3" strategy="afterInteractive" />
         <Script
           id="google-analytics"
           strategy="afterInteractive"
@@ -48,7 +47,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-XXXXXXXXXX', {
+              gtag('config', 'G-LQ2ECEYKB3', {
                 page_path: window.location.pathname,
               });
             `,

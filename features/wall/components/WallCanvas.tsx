@@ -117,7 +117,7 @@ export function WallCanvas() {
           variant={BackgroundVariant.Dots}
           gap={24}
           size={2}
-          style={{ opacity: 0.4 }}
+          style={{ opacity: 0.4, zIndex: -1 }}
           color="#ccc"
         />
       </ReactFlow>
