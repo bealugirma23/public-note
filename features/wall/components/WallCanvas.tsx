@@ -110,6 +110,7 @@ export function WallCanvas() {
         nodeTypes={nodeTypes}
         proOptions={{ hideAttribution: true }}
         fitView
+        fitViewOptions={{ maxZoom: 1 }}
         minZoom={0.1}
         maxZoom={4}
       >
