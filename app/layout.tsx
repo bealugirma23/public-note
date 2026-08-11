@@ -38,7 +38,7 @@ export default function RootLayout({
         </ThemeProvider>
 
         {/* TODO: add real google analaysis credentials  */}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-LQ2ECEYKB3" strategy="afterInteractive" />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-B4LN2XW839" strategy="afterInteractive" />
         <Script
           id="google-analytics"
           strategy="afterInteractive"
@@ -47,7 +47,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-LQ2ECEYKB3', {
+              gtag('config', 'G-B4LN2XW839', {
                 page_path: window.location.pathname,
               });
             `,
