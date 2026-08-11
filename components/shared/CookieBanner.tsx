@@ -9,7 +9,7 @@ export function CookieBanner() {
     const consent = localStorage.getItem("cookie_consent");
 
     if (!consent) {
-      setShow(true);
+      setTimeout(() => setShow(true), 0);
     }
   }, []);
 

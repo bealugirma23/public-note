@@ -12,13 +12,13 @@
 
 # tests
 
-[] - the user should see the public rules on the first visit to the website
-[] - the user should see the after a 600 ms delay of accepting the public note
+[x] - the user should see the public rules on the first visit to the website
+[x] - the user should see the after a 600 ms delay of accepting the public note
 
 # issues
 
-[] - cors issue
-[] - the clustors are on top of each other 
+[x] - cors issue
+[] - the clustors are on top of each other
 
 # Feature
 

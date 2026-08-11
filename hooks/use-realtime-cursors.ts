@@ -161,7 +161,7 @@ export const useRealtimeCursors = ({
       channel.unsubscribe()
       channelRef.current = null
     }
-  }, [])
+  }, [roomName, userId])
 
   useEffect(() => {
     // Add event listener for mousemove

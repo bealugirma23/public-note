@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import emojisData from "../lib/emojis.json";
+import emojisData from "@/lib/emojis.json";
 import { Smiley } from "@phosphor-icons/react";
 
 interface EmojiPickerProps {

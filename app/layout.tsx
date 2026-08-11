@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { CookieBanner } from "./components/CookieBanner";
+import { CookieBanner } from "@/components/shared/CookieBanner";
 import Script from "next/script";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
@@ -34,9 +34,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          {/* TODO: remove cookie   */}
           <CookieBanner />
         </ThemeProvider>
 
+        {/* TODO: add real google analaysis credentials  */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" />
         <Script
           id="google-analytics"

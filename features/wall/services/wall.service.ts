@@ -1,23 +1,6 @@
-import { supabase } from "./supabase";
+import { supabase } from "@/lib/supabase/init";
+import { WallNote } from "../types/note";
 
-export interface WallNote {
-  id: string;
-  body: string;
-  color: string;
-  x: number;
-  y: number;
-  latitude?: number | null;
-  longitude?: number | null;
-  name: string | null;
-  created_at: string;
-  last_interaction_at: string;
-  likes?: number;
-  dislikes?: number;
-  claps?: number;
-  emojis?: Record<string, number>;
-}
-
-// Generate or retrieve the owner token
 export function getOwnerToken(): string {
   if (typeof window === "undefined") return "";
   let token = localStorage.getItem("wall_owner");
@@ -41,14 +24,6 @@ export function isNoteOwned(id: string): boolean {
   if (typeof window === "undefined") return false;
   const owned = JSON.parse(localStorage.getItem("owned_notes") || "[]");
   return owned.includes(id);
-}
-
-export function rotFromId(id: string): number {
-  let hash = 0;
-  for (let i = 0; i < id.length; i++) {
-    hash = id.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  return (Math.abs(hash) % 17) - 8;
 }
 
 export async function fetchNotes(): Promise<WallNote[]> {
@@ -99,7 +74,7 @@ export function subscribeToInteractions(
     .on(
       "postgres_changes",
       { event: "INSERT", schema: "public", table: "wall_note_interactions" },
-      (payload) => onInteraction(payload.new as any)
+      (payload) => onInteraction(payload.new as { note_id: string; type: string })
     )
     .subscribe();
 }
@@ -139,8 +114,9 @@ export async function postNote(
     const data = await res.json();
     trackOwnedNote(data.id);
     return data;
-  } catch (error: any) {
-    if (error.name === "TypeError" && error.message === "Failed to fetch") {
+  } catch (error: unknown) {
+    const err = error as Error;
+    if (err.name === "TypeError" && err.message === "Failed to fetch") {
       console.warn("⚠️ Network Error: Edge Function 'create-wall-note' is unreachable.");
       throw new Error("Edge function not deployed or unreachable.");
     }
@@ -168,8 +144,9 @@ export async function updateNote(id: string, body: string) {
       throw new Error(errorData.error || "Failed to update note");
     }
     return await res.json();
-  } catch (error: any) {
-    if (error.name === "TypeError" && error.message === "Failed to fetch") {
+  } catch (error: unknown) {
+    const err = error as Error;
+    if (err.name === "TypeError" && err.message === "Failed to fetch") {
       console.warn("⚠️ Network Error: Edge Function 'update-wall-note' is unreachable.");
       throw new Error("Edge function not deployed or unreachable.");
     }
@@ -197,8 +174,9 @@ export async function reactToNote(noteId: string, type: string) {
       throw new Error(errorData.error || "Failed to interact with note");
     }
     return await res.json();
-  } catch (error: any) {
-    if (error.name === "TypeError" && error.message === "Failed to fetch") {
+  } catch (error: unknown) {
+    const err = error as Error;
+    if (err.name === "TypeError" && err.message === "Failed to fetch") {
       console.warn("⚠️ Network Error: Edge Function 'interact-wall-note' is unreachable. Ensure it is deployed to Supabase.");
       throw new Error("Edge function not deployed or unreachable.");
     }

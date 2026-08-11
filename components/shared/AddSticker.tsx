@@ -1,6 +1,6 @@
 "use client"
 
-import { Plus, PlusIcon } from "@phosphor-icons/react";
+import { PlusIcon } from "@phosphor-icons/react";
 import { motion } from "framer-motion"
 
 export const AddSticker = (props: { onClick: (color: string) => void }) => {

@@ -77,7 +77,7 @@ export function PublicWallGuidelinesModal({
             onClick={acceptGuidelines}
             className="w-full rounded-lg bg-black px-4 py-3 text-sm font-medium text-white transition hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
           >
-            I understand — let's create
+            I understand — let&apos;s create
           </button>
         </div>
       </motion.div>
